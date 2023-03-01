@@ -1,0 +1,98 @@
+---
+title: "Lab 3"
+author: "Ama Konadu Appau"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+Question 1
+```{r}
+V <- c("Bears", "Lions", "Dolphins", "Eagles", "Bengals")
+```
+The vector V above is an atomic vector because all the objects in the vector belong to the character strings family.They are homogeneous
+
+Question 2
+```{r}
+V[3]
+```
+
+Question 3
+```{r}
+V[c(1,3,5)]
+```
+
+Question 4
+```{r}
+V[c(2,3,4,5)]
+V[-1]
+```
+
+Question 5
+```{r}
+K <- list( x = 3:7, "never", 43, y = list(10,20,30))
+```
+
+The vector K above is  list because it contains objects of different types.It also contains another list y.
+The objects are from different families. 
+x = 3:7 and 43 are from the famiy of integers,"never" is a character string object and y is an integer list
+
+
+Question 6
+```{r}
+length(K)
+```
+
+Question 7
+```{r}
+K[4]
+```
+
+Question 8
+```{r}
+K[1:4]
+K
+```
+
+Question 9a
+```{r}
+tribble( ~x,    ~y,    ~w,    ~z,
+              210,   300,   220,   180,
+              102,   100,   119,   187,
+              176,   175,   188,   173,
+              87,    95,   91,     94,
+              202,   210,  234,    218,
+              110,   122,  131,    128,
+) -> dt
+map_dbl(dt, mean)
+```
+Question 9b
+```{r}
+map_dbl(dt, sd)
+```
+
+Question 9c
+```{r}
+dt %>%
+  map(sqrt)
+```
+
+Question 9d
+```{r}
+dt %>%
+  map(summary)
+```
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+---
+title: "Classwork 1"
+author: "Ama Konadu Appau"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(dplyr)
+```
+
+Question 1
+```{r}
+datetime2 <- ymd_hms("2021-11-13 10:05:31")
+month(datetime2)
+month(datetime2, label = TRUE)
+```
+Question 2
+```{r}
+datetime2 <- ymd_hms("2021-11-13 10:05:31")
+wday(datetime2)
+wday(datetime2, label = TRUE)
+```
+Question 3
+```{r}
+update(datetime2, day = 12, hour = 5)
+```
+Question 4
+```{r}
+dhours(6)
+```
+Question 5
+```{r}
+ddays(4)
+```
+Question 6
+```{r}
+dyears(7) + ddays(30)
+years(7)+ days(30)
+```
+Question 7
+```{r}
+next_year <- today() + years(1)
+(today() %--% next_year)/weeks(1)
+```
+There are approximately 52 weeks between today and a year from now
+Question 8
+```{r}
+(today() %--% ("2022-06-28"))/days(1) 
+```
+There are 204 days between today and  June 28, 2022
+
